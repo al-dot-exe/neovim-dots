@@ -1,0 +1,5 @@
+# Ignore these files to differentiate between devices
+*.txt
+plugin/packer_compiled.lua
+sys
+res
