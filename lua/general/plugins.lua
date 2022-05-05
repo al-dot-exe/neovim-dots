@@ -49,7 +49,8 @@ return packer.startup(function(use)
 	-- My plugins here
 
 	-- General Stuff From Vim-Script
-	use("vim-airline/vim-airline") -- Status bar
+	-- use("vim-airline/vim-airline") -- Status bar
+	use("itchyny/lightline.vim") -- Status bar
 	use("mhinz/vim-startify") -- vim start menu
 	use("danro/rename.vim")
 	use("tpope/vim-surround")
@@ -67,8 +68,8 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp") -- Extra source completion
 
 	-- Snippets
-	use("hrsh7th/vim-vsnip") -- snippet support for html and css?
-	use("hrsh7th/vim-vsnip-integ")
+	-- use("hrsh7th/vim-vsnip") -- snippet support for html and css? not updating for some reason?
+	-- use("hrsh7th/vim-vsnip-integ")
 	use("L3MON4D3/Luasnip") -- Lua snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets
 
@@ -92,7 +93,7 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use("nvim-treesitter/playground") -- element view for treesitter
+	-- use("nvim-treesitter/playground") -- element view for treesitter
 	use("p00f/nvim-ts-rainbow") -- extra highlighting for scope differentiation
 	-- use "tami5/lspsaga.nvim"           -- code intelligence and diagnostics (currently getting that with null ls)
 	use("dense-analysis/ale") -- async Linting Engine
@@ -111,7 +112,6 @@ return packer.startup(function(use)
 	})
 	--Themes and Colors
 	use("rose-pine/neovim")
-	use("vim-airline/vim-airline-themes")
 	use("christianchiarulli/nvcode-color-schemes.vim")
 	use("bluz71/vim-nightfly-guicolors")
 

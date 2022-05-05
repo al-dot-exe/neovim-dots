@@ -5,7 +5,8 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers)
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers)
+  -- ignore_install = true,
   highlight = {
     enable = true,   -- false will disable the whole extension
     additional_vim_regex_highlighting = true,
