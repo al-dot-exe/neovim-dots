@@ -6,7 +6,11 @@ end
 
 configs.setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers)
+<<<<<<< HEAD
   ignore_install = {"phpdoc"}, -- list of parsers to ignore on install
+=======
+  -- ignore_install = true,
+>>>>>>> refs/remotes/origin/main
   highlight = {
     enable = true,   -- false will disable the whole extension
     additional_vim_regex_highlighting = true,
