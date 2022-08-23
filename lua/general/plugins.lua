@@ -72,6 +72,7 @@ return packer.startup(function(use)
 	-- use("hrsh7th/vim-vsnip-integ")
 	use("L3MON4D3/Luasnip") -- Lua snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets
+  use("mlaursen/vim-react-snippets") -- react.js snippets
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- built in language servers
@@ -85,13 +86,14 @@ return packer.startup(function(use)
 	})
 
   -- TRYING OUT DIM!
-	use({
-		"narutoxy/dim.lua",
-		requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
-		config = function()
-			require("dim").setup({})
-		end,
-	})
+-- Not working right for some reason need to figure it out
+	-- use({
+	-- 	"narutoxy/dim.lua",
+	-- 	requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
+	-- 	config = function()
+	-- 		require("dim").setup({})
+	-- 	end,
+	-- })
 
 	-- use("nvim-treesitter/playground") -- element view for treesitter
 	use("p00f/nvim-ts-rainbow") -- extra highlighting for scope differentiation
