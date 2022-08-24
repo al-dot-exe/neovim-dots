@@ -68,11 +68,14 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp") -- Extra source completion
 
 	-- Snippets
-	-- use("hrsh7th/vim-vsnip") -- snippet support for html and css? not updating for some reason?
-	-- use("hrsh7th/vim-vsnip-integ")
+	use("hrsh7th/vim-vsnip") -- snippet support for html and css? not updating for some reason?
+	use("hrsh7th/vim-vsnip-integ")
 	use("L3MON4D3/Luasnip") -- Lua snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets
-  use("mlaursen/vim-react-snippets") -- react.js snippets
+
+  -- react snippets
+  -- use("SirVer/ultisnips")
+  -- use("mlaursen/vim-react-snippets")
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- built in language servers

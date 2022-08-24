@@ -9,6 +9,7 @@ require "general.keymaps"
 require "general.telescope"
 require "general.toggleterm"
 require "general.treesitter"
+require "general.luasnip"
 
 
 -- Extra vim scripts with no lua alternatives
