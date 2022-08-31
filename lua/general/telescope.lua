@@ -28,13 +28,13 @@ telescope.setup {
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
 
-        ["<CR>"] = actions.select_default,
+        ["<CR>"] = actions.select_tab,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
+        ["<C-b>"] = actions.select_default, -- buffer selection
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<S-j>"] = actions.preview_scrolling_up,
+        ["<S-k>"] = actions.preview_scrolling_down,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
@@ -49,10 +49,10 @@ telescope.setup {
 
       n = {
         ["<esc>"] = actions.close,
-        ["<CR>"] = actions.select_default,
+        ["<CR>"] = actions.select_tab,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
+        ["<C-b>"] = actions.select_default, -- buffer selection
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -70,8 +70,8 @@ telescope.setup {
         ["gg"] = actions.move_to_top,
         ["G"] = actions.move_to_bottom,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<S-j>"] = actions.preview_scrolling_up,
+        ["<S-k>"] = actions.preview_scrolling_down,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
@@ -100,9 +100,11 @@ telescope.setup {
         filetypes = {"png", "webp", "jpg", "jpeg", "pdf"},
         find_cmd = "rg" -- find command (defaults to `fd`)
       },
-    file_browser = {
-      theme = 'dropdown',
-    },
+    -- *** might change size of file_browser window later
+    -- file_browser = {
+    --   theme = 'dropdown',
+    -- },
+    --
     -- More extension configs go here:
     -- extension_name = {
     --   extension_config_key = value,
