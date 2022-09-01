@@ -33,8 +33,8 @@ telescope.setup {
         ["<C-v>"] = actions.select_vertical,
         ["<C-b>"] = actions.select_default, -- buffer selection
 
-        ["<S-j>"] = actions.preview_scrolling_up,
-        ["<S-k>"] = actions.preview_scrolling_down,
+        ["<S-k>"] = actions.preview_scrolling_up,
+        ["<S-j>"] = actions.preview_scrolling_down,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
@@ -70,8 +70,8 @@ telescope.setup {
         ["gg"] = actions.move_to_top,
         ["G"] = actions.move_to_bottom,
 
-        ["<S-j>"] = actions.preview_scrolling_up,
-        ["<S-k>"] = actions.preview_scrolling_down,
+        ["<S-k>"] = actions.preview_scrolling_up,
+        ["<S-j>"] = actions.preview_scrolling_down,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,

@@ -2,6 +2,7 @@
 
 -- Variables and Allowing for changes
 local opts = { noremap = true, silent = true }
+local nopts = { noremap = false, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Remap space as leader key
@@ -29,15 +30,14 @@ keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
 -- Telescope Explorer
 keymap("n", "<leader>t", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
--- File Browser extension
+-- File Explorer extension
 keymap("n", "<leader>e", "<cmd>Telescope file_browser<cr> | <ESC>", opts)
--- keymap("n", "<leader>e", "<cmd>Telescope file_browser<ESC>", opts)
 -- Telescope media file extension
 keymap("n", "<leader>m", "<cmd>Telescope media_files<cr> | <ESC>", opts)
 
 -- Resize with jrrows
-keymap("n", "<A-Up", ":resize +2<CR>", opts)
-keymap("n", "<c-Down", ":resize -2<CR>", opts)
+keymap("n", "<A-Up>", ":resize +2<CR>", opts)
+keymap("n", "<a-Down>", ":resize -2<CR>", opts)
 -- keymap("n", "<A-Up", ":vertical resize -2<CR>", opts)
 -- keymap("n", "<A-Right", ":vertical resize +2<CR>", opts)
 
@@ -53,3 +53,8 @@ keymap("v", "p", '"_dP', opts)
 -- html previewing
 keymap("n", "<leader>b", ":Bracey <cr>", opts)
 keymap("n", "<leader>r", ":BraceyReload <cr>", opts)
+
+-- REST client for testing
+keymap("n", "<a-c>", "<Plug>RestNvim <cr>", nopts)
+keymap("n", "<a-v>","<Plug>RestNvimPreview", nopts)
+keymap("n", "<a-r>", "<Plug>RestNvimLast", nopts)
