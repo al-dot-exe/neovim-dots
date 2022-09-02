@@ -41,7 +41,6 @@ keymap("n", "<a-Down>", ":resize -2<CR>", opts)
 -- keymap("n", "<A-Up", ":vertical resize -2<CR>", opts)
 -- keymap("n", "<A-Right", ":vertical resize +2<CR>", opts)
 
-
 -- Return to normal mode from other modes mode
 keymap("i", "[e", "<ESC>", opts)
 keymap("v", "[e", "<ESC>", opts)
@@ -56,5 +55,5 @@ keymap("n", "<leader>r", ":BraceyReload <cr>", opts)
 
 -- REST client for testing
 keymap("n", "<a-c>", "<Plug>RestNvim <cr>", nopts)
-keymap("n", "<a-v>","<Plug>RestNvimPreview", nopts)
+keymap("n", "<a-v>", "<Plug>RestNvimPreview", nopts)
 keymap("n", "<a-r>", "<Plug>RestNvimLast", nopts)

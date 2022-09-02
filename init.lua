@@ -11,6 +11,7 @@ require "general.telescope"
 require "general.toggleterm"
 require "general.luasnip"
 require "general.rest"
+require "general.templatelangs"
 -- require "general.dim" -- not playing nice with null ls
 
 

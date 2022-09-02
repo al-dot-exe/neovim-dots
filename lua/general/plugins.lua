@@ -84,6 +84,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter", -- sexy syntax highlighting
     run = "TSUpdate",
   })
+  use("tree-sitter/tree-sitter-embedded-template"); -- highlighting for ejs and erb hopefully
 
   use("nvim-treesitter/playground") -- element view for treesitter (was previously commented don't know why
   use("p00f/nvim-ts-rainbow") -- extra highlighting for scope differentiation
