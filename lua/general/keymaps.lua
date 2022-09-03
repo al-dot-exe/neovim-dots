@@ -25,6 +25,7 @@ keymap("n", "<S-l>", ":tabn <cr>", opts)
 -- keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Formatting and Linting
+-- formatting_sync is deprecated changing to format
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
 
 -- Telescope Explorer
@@ -52,6 +53,10 @@ keymap("v", "p", '"_dP', opts)
 -- html previewing
 keymap("n", "<leader>b", ":Bracey <cr>", opts)
 keymap("n", "<leader>r", ":BraceyReload <cr>", opts)
+
+-- markdown previewing
+keymap("n", "<leader>p", "<cmd>MarkdownPreview<cr>", opts)
+
 
 -- REST client for testing
 keymap("n", "<a-c>", "<Plug>RestNvim <cr>", nopts)

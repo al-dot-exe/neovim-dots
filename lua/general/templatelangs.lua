@@ -1,9 +1,10 @@
 -- support for templating languages. 
--- just ejs and htmldjango for now
+-- so far htmldjango, ejs, and hbs
 
 vim.filetype.add({
   extension = {
     htmldjango = "htmldjango.html",
-    ejs = "ejs.html"
+    ejs = "ejs.html",
+    hbs = "hbs.html"
   },
 })

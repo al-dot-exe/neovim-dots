@@ -58,26 +58,14 @@ return packer.startup(function(use)
   use("Yggdroot/indentLine")
   -- use "RRethy/vim-illuminate"           -- Highlight hovered text
 
-  -- Auto Completion Plugins
-  -- use "hrsh7th/nvim-compe"              -- Gets theme to work
-  use("hrsh7th/nvim-cmp") -- Auto-completion
-  use("hrsh7th/cmp-buffer") -- Buffer completion
-  use("hrsh7th/cmp-path") -- Path completion
-  use("hrsh7th/cmp-cmdline") -- cmdline completion
-  use("saadparwaiz1/cmp_luasnip") -- snippet completion for lua
-  use("hrsh7th/cmp-nvim-lsp") -- Extra source completion
 
   -- Snippets
   use("hrsh7th/vim-vsnip") -- snippet support for html and css? not updating for some reason?
   use("hrsh7th/vim-vsnip-integ")
   use("L3MON4D3/Luasnip") -- Lua snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets
-  -- react snippets not required because we have luasnip
 
-  -- LSP
-  use("neovim/nvim-lspconfig") -- built in language servers
-  use("williamboman/nvim-lsp-installer") -- LSP installer
-  use("jose-elias-alvarez/null-ls.nvim") -- Provides lsp formatting
+  -- react snippets not required because we have luasnip
 
   -- Parsers!
   use({
@@ -90,6 +78,21 @@ return packer.startup(function(use)
   use("p00f/nvim-ts-rainbow") -- extra highlighting for scope differentiation
   -- use "tami5/lspsaga.nvim"   -- code intelligence and diagnostics (currently getting that with null ls)
   use("dense-analysis/ale") -- async Linting Engine
+
+  -- LSP
+  use("neovim/nvim-lspconfig") -- built in language servers
+  use("williamboman/nvim-lsp-installer") -- LSP installer
+  use("jose-elias-alvarez/null-ls.nvim") -- Provides lsp formatting
+  use("aca/emmet-ls"); -- Not working....
+
+  -- Auto Completion Plugins
+  -- use "hrsh7th/nvim-compe"              -- Gets theme to work
+  use("hrsh7th/nvim-cmp") -- Auto-completion
+  use("hrsh7th/cmp-buffer") -- Buffer completion
+  use("hrsh7th/cmp-path") -- Path completion
+  use("hrsh7th/cmp-cmdline") -- cmdline completion
+  use("saadparwaiz1/cmp_luasnip") -- snippet completion for lua
+  use("hrsh7th/cmp-nvim-lsp") -- Extra source completion
 
   -- TRYING OUT DIM!
   -- plugin isn't playing nice with null ls
@@ -108,6 +111,8 @@ return packer.startup(function(use)
     "turbio/bracey.vim", --Opens website preview on local machine
     "akinsho/toggleterm.nvim", --Opens a terminal in a floating window
     "NTBBloodbath/rest.nvim", -- REST client to test server not working right :/ ***
+    "aspeddro/pandoc.nvim", -- needed for previewer
+    "davidgranstrom/nvim-markdown-preview" -- markdown previewer
   })
 
   --Themes and Colors
