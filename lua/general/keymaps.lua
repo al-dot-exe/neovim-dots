@@ -26,7 +26,7 @@ keymap("n", "<S-l>", ":tabn <cr>", opts)
 
 -- Formatting and Linting
 -- formatting_sync is deprecated changing to format
-keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting_seq_sync()<cr>", opts)
 
 -- Telescope Explorer
 keymap("n", "<leader>t", "<cmd>Telescope find_files<cr>", opts)
