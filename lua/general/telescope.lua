@@ -7,6 +7,7 @@ end
 
 
 local actions = require "telescope.actions"
+local fb_actions = require "telescope".extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
@@ -101,9 +102,10 @@ telescope.setup {
         find_cmd = "rg" -- find command (defaults to `fd`)
       },
     -- *** might change size of file_browser window later
-    -- file_browser = {
-    --   theme = 'dropdown',
-    -- },
+    file_browser = {
+      -- theme = 'dropdown',
+      -- <A-c>/C creates a file,
+    },
     --
     -- More extension configs go here:
     -- extension_name = {

@@ -93,11 +93,11 @@ return packer.startup(function(use)
   use("hrsh7th/cmp-cmdline") -- cmdline completion
   use("saadparwaiz1/cmp_luasnip") -- snippet completion for lua
   use("hrsh7th/cmp-nvim-lsp") -- Extra source completion
+  use("windwp/nvim-autopairs") -- will auto complete lines testing for now ***
 
   -- TRYING OUT DIM!
   -- plugin isn't playing nice with null ls
   -- use("narutoxy/dim.lua")
-  --
   -- use "junegunn/limelight.vim" -- nice highlighting
 
   -- Exploration

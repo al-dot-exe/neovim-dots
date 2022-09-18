@@ -6,6 +6,7 @@ require "general.treesitter"
 require "general.lsp"
 -- require "general.emmet" -- emmet snippets for html it's a language server actually
 require "general.cmp"
+require "general.autopairs"
 require "general.options"
 require "general.keymaps"
 require "general.telescope"

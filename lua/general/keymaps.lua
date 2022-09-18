@@ -25,7 +25,7 @@ keymap("n", "<S-l>", ":tabn <cr>", opts)
 -- keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Formatting and Linting
--- formatting_sync is deprecated changing to format
+-- formatting_sync is deprecated changing to format(edit: think it broke everything else)
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting_seq_sync()<cr>", opts)
 
 -- Telescope Explorer
