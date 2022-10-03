@@ -3,9 +3,9 @@
 local options = {
   completeopt = { "menuone", "noselect" }, -- for cmp
   fileencoding = "utf-8", -- file encoding
-  shiftwidth = 3, -- default indenation
-  tabstop = 3, -- 2 spaces for a tab
-  softtabstop = 3, -- similar to above
+  shiftwidth = 2, -- default indenation
+  tabstop = 2, -- 2 spaces for a tab
+  softtabstop = 2, -- similar to above
   expandtab = true, -- expands tabs
   autoindent = true, -- Keep indentation from previous line
   smartcase = true, -- makes smarter case if need be
