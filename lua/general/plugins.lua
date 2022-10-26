@@ -41,7 +41,6 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-
   -- Default Plugins
   use("wbthomason/packer.nvim") -- Have packer manage itself
   use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
@@ -58,7 +57,6 @@ return packer.startup(function(use)
   use("Yggdroot/indentLine")
   -- use "RRethy/vim-illuminate"           -- Highlight hovered text
 
-
   -- Snippets
   use("hrsh7th/vim-vsnip") -- snippet support for html and css? not updating for some reason?
   use("hrsh7th/vim-vsnip-integ")
@@ -72,7 +70,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter", -- sexy syntax highlighting
     run = "TSUpdate",
   })
-  use("tree-sitter/tree-sitter-embedded-template"); -- highlighting for ejs and erb hopefully
+  use("tree-sitter/tree-sitter-embedded-template") -- highlighting for ejs and erb hopefully
 
   use("nvim-treesitter/playground") -- element view for treesitter (was previously commented don't know why
   use("p00f/nvim-ts-rainbow") -- extra highlighting for scope differentiation
@@ -83,7 +81,7 @@ return packer.startup(function(use)
   use("neovim/nvim-lspconfig") -- built in language servers
   use("williamboman/nvim-lsp-installer") -- LSP installer
   use("jose-elias-alvarez/null-ls.nvim") -- Provides lsp formatting
-  use("aca/emmet-ls"); -- Not working....
+  use("aca/emmet-ls") -- Not working....
 
   -- Auto Completion Plugins
   -- use "hrsh7th/nvim-compe"              -- Gets theme to work
@@ -112,7 +110,7 @@ return packer.startup(function(use)
     "akinsho/toggleterm.nvim", --Opens a terminal in a floating window
     "NTBBloodbath/rest.nvim", -- REST client to test server not working right :/ ***
     "aspeddro/pandoc.nvim", -- needed for previewer
-    "davidgranstrom/nvim-markdown-preview" -- markdown previewer
+    "davidgranstrom/nvim-markdown-preview", -- markdown previewer
   })
 
   --Themes and Colors
@@ -122,7 +120,6 @@ return packer.startup(function(use)
 
   -- icing on the cake
   use("kyazdani42/nvim-web-devicons") -- Dev Icons
-
 
   -- config needed
   use("liuchengxu/vim-which-key")
