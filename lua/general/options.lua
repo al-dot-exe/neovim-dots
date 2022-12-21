@@ -34,4 +34,5 @@ vim.cmd("set autoread")
 vim.cmd("set is")
 -- vim.cmd "set t_Co=256"
 vim.cmd([[set iskeyword+=-]])
-vim.cmd("set path+=**")
+vim.cmd("set path+=**") -- allows absolute file path search
+vim.cmd("map gf <c-w>gf") -- go to file under cursor now opens in a new tab
