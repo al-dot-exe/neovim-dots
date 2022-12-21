@@ -113,6 +113,17 @@ return packer.startup(function(use)
     "davidgranstrom/nvim-markdown-preview", -- markdown previewer
   })
 
+  --Extra typescript support
+  --   use {"jose-elias-alvarez/typescript.nvim", config = function()
+  --   require("typescript").setup()
+  -- end
+  -- }
+
+  -- Git
+  use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+  require('git-conflict').setup()
+end}
+
   --Themes and Colors
   use("rose-pine/neovim")
   use("christianchiarulli/nvcode-color-schemes.vim")

@@ -34,3 +34,4 @@ vim.cmd("set autoread")
 vim.cmd("set is")
 -- vim.cmd "set t_Co=256"
 vim.cmd([[set iskeyword+=-]])
+vim.cmd("set path+=**")
