@@ -46,24 +46,21 @@ return packer.startup(function(use)
   use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
   use("nvim-lua/plenary.nvim") -- Useful lua functions used in lots of plugins
 
-  -- My plugins here
-
+  -- MY PLUGINS HERE
   -- General Stuff From Vim-Script
   use("itchyny/lightline.vim") -- Status bar
   use("mhinz/vim-startify") -- vim start menu
   use("danro/rename.vim")
   use("tpope/vim-surround")
   use("vim-scripts/tComment") -- comment functionality
-  use("Yggdroot/indentLine")
-  -- use "RRethy/vim-illuminate"           -- Highlight hovered text
+  use("Yggdroot/indentLine")  -- indent functionality
+  use("RRethy/vim-illuminate") -- Highlight hovered text
 
   -- Snippets
-  use("hrsh7th/vim-vsnip") -- snippet support for html and css? not updating for some reason?
+  use("hrsh7th/vim-vsnip") -- snippet support for html and css? 
   use("hrsh7th/vim-vsnip-integ")
   use("L3MON4D3/Luasnip") -- Lua snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets
-
-  -- react snippets not required because we have luasnip
 
   -- Parsers!
   use({
@@ -71,8 +68,7 @@ return packer.startup(function(use)
     run = "TSUpdate",
   })
   use("tree-sitter/tree-sitter-embedded-template") -- highlighting for ejs and erb hopefully
-
-  use("nvim-treesitter/playground") -- element view for treesitter (was previously commented don't know why
+  use("nvim-treesitter/playground") -- element view for treesitter
   use("p00f/nvim-ts-rainbow") -- extra highlighting for scope differentiation
   -- use "tami5/lspsaga.nvim"   -- code intelligence and diagnostics (currently getting that with null ls)
   use("dense-analysis/ale") -- async Linting Engine
@@ -81,10 +77,9 @@ return packer.startup(function(use)
   use("neovim/nvim-lspconfig") -- built in language servers
   use("williamboman/nvim-lsp-installer") -- LSP installer
   use("jose-elias-alvarez/null-ls.nvim") -- Provides lsp formatting
-  use("aca/emmet-ls") -- Not working....
 
   -- Auto Completion Plugins
-  -- use "hrsh7th/nvim-compe"              -- Gets theme to work
+  -- use "hrsh7th/nvim-compe"              -- The old file that was replaced with nvim-cmp
   use("hrsh7th/nvim-cmp") -- Auto-completion
   use("hrsh7th/cmp-buffer") -- Buffer completion
   use("hrsh7th/cmp-path") -- Path completion
@@ -106,12 +101,15 @@ return packer.startup(function(use)
 
   -- Web Development
   use({
-    "turbio/bracey.vim", --Opens website preview on local machine
+    "turbio/bracey.vim", --Opens frontend preview on local machine
     "akinsho/toggleterm.nvim", --Opens a terminal in a floating window
-    "NTBBloodbath/rest.nvim", -- REST client to test server not working right :/ ***
+    "NTBBloodbath/rest.nvim", -- REST client to test server not working right :/ pretty sure its working actually
     "aspeddro/pandoc.nvim", -- needed for previewer
     "davidgranstrom/nvim-markdown-preview", -- markdown previewer
   })
+
+  -- Language specific
+  use('mfussenegger/nvim-jdtls') -- Java extensions 
 
   --Extra typescript support
   --   use {"jose-elias-alvarez/typescript.nvim", config = function()
@@ -120,9 +118,9 @@ return packer.startup(function(use)
   -- }
 
   -- Git
-  use {'akinsho/git-conflict.nvim', tag = "*", config = function()
-  require('git-conflict').setup()
-end}
+  use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
+    require('git-conflict').setup()
+  end }
 
   --Themes and Colors
   use("rose-pine/neovim")
