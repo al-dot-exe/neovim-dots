@@ -17,9 +17,6 @@ cd ~
 Store the above in a script somewhere on your computer (maybe in a folder called scripts?)
 called nightly-update.sh
 
-If you want to change color schemes on multiple devices. store a .txt file in this directory and change
-the code for colorscheme.lua accordingly
-
 For more details about how to setup neovim in a similar way I recommend watching
 Chris@Machine's neovim from scratch series found at the link below:
 
