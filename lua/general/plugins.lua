@@ -53,11 +53,11 @@ return packer.startup(function(use)
   use("danro/rename.vim")
   use("tpope/vim-surround")
   use("vim-scripts/tComment") -- comment functionality
-  use("Yggdroot/indentLine")  -- indent functionality
+  use("Yggdroot/indentLine") -- indent functionality
   use("RRethy/vim-illuminate") -- Highlight hovered text
 
   -- Snippets
-  use("hrsh7th/vim-vsnip") -- snippet support for html and css? 
+  use("hrsh7th/vim-vsnip") -- snippet support for html and css?
   use("hrsh7th/vim-vsnip-integ")
   use("L3MON4D3/Luasnip") -- Lua snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets
@@ -109,7 +109,7 @@ return packer.startup(function(use)
   })
 
   -- Language specific
-  use('mfussenegger/nvim-jdtls') -- Java extensions 
+  use("mfussenegger/nvim-jdtls") -- Java extensions
 
   --Extra typescript support
   --   use {"jose-elias-alvarez/typescript.nvim", config = function()
@@ -118,17 +118,21 @@ return packer.startup(function(use)
   -- }
 
   -- Git
-  use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
-    require('git-conflict').setup()
-  end }
+  use({
+    "akinsho/git-conflict.nvim",
+    tag = "*",
+    config = function()
+      require("git-conflict").setup()
+    end,
+  })
 
   --Themes and Colors
   use("rose-pine/neovim")
   use("christianchiarulli/nvcode-color-schemes.vim")
   use("bluz71/vim-nightfly-guicolors")
 
-  -- icing on the cake
-  use("kyazdani42/nvim-web-devicons") -- Dev Icons
+  -- icing on the cake (dev icons repo had change in ownership)
+  use("nvim-tree/nvim-web-devicons") -- Dev Icons
 
   -- config needed
   use("liuchengxu/vim-which-key")
