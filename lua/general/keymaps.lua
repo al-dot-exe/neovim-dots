@@ -24,13 +24,17 @@ keymap("n", "<S-l>", ":tabn <cr>", opts)
 -- keymap("n", "<S-l>", ":bnext<CR>", opts)
 -- keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+
+--Opens Mason package manager
+keymap("n", "<c-i>", "<cmd>Mason<cr>", opts)
+
 -- Formatting and Linting
 -- formatting_sync is deprecated changing to format(edit: think it broke everything else)
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<cr>", opts)
 
 -- Telescope Explorer
 keymap("n", "<leader>t", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader-g>", "<cmd>Telescope live_grep<cr>", opts)
 -- File Explorer extension
 keymap("n", "<leader>e", "<cmd>Telescope file_browser<cr> | <ESC>", opts)
 -- Telescope media file extension
@@ -56,7 +60,6 @@ keymap("n", "<leader>r", ":BraceyReload <cr>", opts)
 
 -- markdown previewing
 keymap("n", "<leader>p", "<cmd>MarkdownPreview<cr>", opts)
-
 
 -- REST client for testing
 keymap("n", "<a-c>", "<Plug>RestNvim <cr>", nopts)

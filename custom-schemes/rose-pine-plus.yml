@@ -22,6 +22,7 @@ palette:
   cyan: "#9ccfd8"
   white: "#e7cde7"
   pink: "#e793ce"
+  comment_green: "#b8d8be"
   line_grey: "#5C6370"
   gutter_fg_grey: "#858585"
   cursor_grey: "#2C323C"

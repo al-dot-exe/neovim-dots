@@ -1,4 +1,4 @@
-return {
+local pyright_opts = {
   settings = {
     python = {
       analysis = {
@@ -7,3 +7,4 @@ return {
     }
   },
 }
+return pyright_opts

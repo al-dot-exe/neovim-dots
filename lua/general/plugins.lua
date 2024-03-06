@@ -3,16 +3,16 @@ local fn = vim.fn
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
-  print("Installing packer close and reopen Neovim...")
-  vim.cmd([[packadd packer.nvim]])
+	PACKER_BOOTSTRAP = fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+	print("Installing packer close and reopen Neovim...")
+	vim.cmd([[packadd packer.nvim]])
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
@@ -26,124 +26,129 @@ vim.cmd([[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  print("Something went wrong with packer :(")
-  return
+	print("Something went wrong with packer :(")
+	return
 end
 
 -- Have packer use a popup window
 packer.init({
-  display = {
-    open_fn = function()
-      return require("packer.util").float({ border = "rounded" })
-    end,
-  },
+	display = {
+		open_fn = function()
+			return require("packer.util").float({ border = "rounded" })
+		end,
+	},
 })
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- Default Plugins
-  use("wbthomason/packer.nvim") -- Have packer manage itself
-  use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-  use("nvim-lua/plenary.nvim") -- Useful lua functions used in lots of plugins
+	-- Default Plugins
+	use("wbthomason/packer.nvim") -- Have packer manage itself
+	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	use("nvim-lua/plenary.nvim") -- Useful lua functions used in lots of plugins
 
-  -- MY PLUGINS HERE
-  -- General Stuff From Vim-Script
-  use("itchyny/lightline.vim") -- Status bar
-  use("mhinz/vim-startify") -- vim start menu
-  use("danro/rename.vim")
-  use("tpope/vim-surround")
-  use("vim-scripts/tComment") -- comment functionality
-  use("Yggdroot/indentLine") -- indent functionality
-  use("RRethy/vim-illuminate") -- Highlight hovered text
+	-- MY PLUGINS HERE
+	-- General Stuff From Vim-Script
+	use("itchyny/lightline.vim") -- Status bar
+	use("mhinz/vim-startify") -- vim start menu
+	use("danro/rename.vim")
+	use("tpope/vim-surround")
+	use("vim-scripts/tComment") -- comment functionality
+	use("Yggdroot/indentLine") -- indent functionality
+	use("RRethy/vim-illuminate") -- Highlight hovered text
 
-  -- Snippets
-  use("hrsh7th/vim-vsnip") -- snippet support for html and css?
-  use("hrsh7th/vim-vsnip-integ")
-  use("L3MON4D3/Luasnip") -- Lua snippet engine
-  use("rafamadriz/friendly-snippets") -- a bunch of snippets
+	-- Snippets
+	use("hrsh7th/vim-vsnip") -- snippet support for html and css?
+	use("hrsh7th/vim-vsnip-integ")
+	use("L3MON4D3/Luasnip") -- Lua snippet engine
+	use("rafamadriz/friendly-snippets") -- a bunch of snippets
 
-  -- Parsers!
-  use({
-    "nvim-treesitter/nvim-treesitter", -- sexy syntax highlighting
-    run = "TSUpdate",
-  })
-  use("tree-sitter/tree-sitter-embedded-template") -- highlighting for ejs and erb hopefully
-  use("nvim-treesitter/playground") -- element view for treesitter
-  use("p00f/nvim-ts-rainbow") -- extra highlighting for scope differentiation
-  -- use "tami5/lspsaga.nvim"   -- code intelligence and diagnostics (currently getting that with null ls)
-  use("dense-analysis/ale") -- async Linting Engine
+	-- Parsers!
+	use({
+		"nvim-treesitter/nvim-treesitter", -- sexy syntax highlighting
+		run = "TSUpdate",
+	})
+	use("tree-sitter/tree-sitter-embedded-template") -- highlighting for ejs and erb hopefully
+	use("nvim-treesitter/playground") -- element view for treesitter
+	use("p00f/nvim-ts-rainbow") -- extra highlighting for scope differentiation
+	-- use "tami5/lspsaga.nvim"   -- code intelligence and diagnostics (currently getting that with null ls)
+	use("dense-analysis/ale") -- async Linting Engine
 
-  -- LSP
-  use("neovim/nvim-lspconfig") -- built in language servers
-  use("williamboman/nvim-lsp-installer") -- LSP installer
-  use("jose-elias-alvarez/null-ls.nvim") -- Provides lsp formatting
+	-- Language Server Provider info (LSP)
+	use("neovim/nvim-lspconfig") -- built in language servers
+	use("williamboman/mason.nvim") -- Portable package manager for lanaguage details (lsp, lint, daps)
+	use("williamboman/mason-lspconfig.nvim") -- Bridge between mason and lsp config
+	use("jose-elias-alvarez/null-ls.nvim") -- Provides lsp formatting and linting
 
-  -- Auto Completion Plugins
-  -- use "hrsh7th/nvim-compe"              -- The old file that was replaced with nvim-cmp
-  use("hrsh7th/nvim-cmp") -- Auto-completion
-  use("hrsh7th/cmp-buffer") -- Buffer completion
-  use("hrsh7th/cmp-path") -- Path completion
-  use("hrsh7th/cmp-cmdline") -- cmdline completion
-  use("saadparwaiz1/cmp_luasnip") -- snippet completion for lua
-  use("hrsh7th/cmp-nvim-lsp") -- Extra source completion
-  use("windwp/nvim-autopairs") -- will auto complete lines testing for now ***
+	-- Debugger Protocol
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use("folke/neodev.nvim") -- enables typechecking for dap-ui debugger
 
-  -- TRYING OUT DIM!
-  -- plugin isn't playing nice with null ls
-  -- use("narutoxy/dim.lua")
-  -- use "junegunn/limelight.vim" -- nice highlighting
+	-- Auto Completion Plugins
+	-- use "hrsh7th/nvim-compe"              -- The old file that was replaced with nvim-cmp
+	use("hrsh7th/nvim-cmp") -- Auto-completion
+	use("hrsh7th/cmp-buffer") -- Buffer completion
+	use("hrsh7th/cmp-path") -- Path completion
+	use("hrsh7th/cmp-cmdline") -- cmdline completion
+	use("saadparwaiz1/cmp_luasnip") -- snippet completion for lua
+	use("hrsh7th/cmp-nvim-lsp") -- Extra source completion
+	use("windwp/nvim-autopairs") -- will auto complete lines testing for now ***
 
-  -- Exploration
-  use("nvim-telescope/telescope.nvim") -- Fuzzy Finder for nvim
-  use("nvim-telescope/telescope-file-browser.nvim") -- file explorer no working as expected
-  use("nvim-telescope/telescope-media-files.nvim") --browse pictures only
-  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Improve telescope sorting
+	-- TRYING OUT DIM!
+	-- plugin isn't playing nice with null ls
+	-- use("narutoxy/dim.lua")
+	-- use "junegunn/limelight.vim" -- nice highlighting
 
-  -- Web Development
-  use({
-    "turbio/bracey.vim", --Opens frontend preview on local machine
-    "akinsho/toggleterm.nvim", --Opens a terminal in a floating window
-    "NTBBloodbath/rest.nvim", -- REST client to test server not working right :/ pretty sure its working actually
-    "aspeddro/pandoc.nvim", -- needed for previewer
-    "davidgranstrom/nvim-markdown-preview", -- markdown previewer
-  })
+	-- Exploration
+	use("nvim-telescope/telescope.nvim") -- Fuzzy Finder for nvim
+	use("nvim-telescope/telescope-file-browser.nvim") -- file explorer no working as expected
+	use("nvim-telescope/telescope-media-files.nvim") --browse pictures only
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Improve telescope sorting
 
-  -- Language specific
-  use("mfussenegger/nvim-jdtls") -- Java extensions
+	-- Web Development
+	use({
+		"turbio/bracey.vim", --Opens frontend preview on local machine
+		"akinsho/toggleterm.nvim", --Opens a terminal in a floating window !!! isn't updating
+		"NTBBloodbath/rest.nvim", -- REST client to test server not working right :/ pretty sure its working actually
+		"aspeddro/pandoc.nvim", -- needed for previewer
+		"davidgranstrom/nvim-markdown-preview", -- markdown previewer
+	})
 
-  --Extra typescript support
-  --   use {"jose-elias-alvarez/typescript.nvim", config = function()
-  --   require("typescript").setup()
-  -- end
-  -- }
+	-- Language specific
+	use("mfussenegger/nvim-jdtls") -- Java extensions
 
-  -- Git
-  use({
-    "akinsho/git-conflict.nvim",
-    tag = "*",
-    config = function()
-      require("git-conflict").setup()
-    end,
-  })
+	--Extra typescript support
+	--   use {"jose-elias-alvarez/typescript.nvim", config = function()
+	--   require("typescript").setup()
+	-- end
+	-- }
 
-  --Themes and Colors
-  use("rose-pine/neovim")
-  use("christianchiarulli/nvcode-color-schemes.vim")
-  use("bluz71/vim-nightfly-guicolors")
+	-- Git
+	use({
+		"akinsho/git-conflict.nvim",
+		tag = "*",
+		config = function()
+			require("git-conflict").setup()
+		end,
+	})
 
-  -- icing on the cake (dev icons repo had change in ownership)
-  use("nvim-tree/nvim-web-devicons") -- Dev Icons
+	--Themes and Colors
+	use("rose-pine/neovim")
+	use("christianchiarulli/nvcode-color-schemes.vim")
+	use("bluz71/vim-nightfly-guicolors")
 
-  -- config needed
-  use("liuchengxu/vim-which-key")
-  --use "junegunn/fzf", { 'do': { -> fzf#install() } }
-  --use "junegunn/fzf.vim"
-  use("norcalli/nvim-colorizer.lua") --instant colors!
-  use("justinmk/vim-sneak") --go to nearest letter or word
+	-- icing on the cake (dev icons repo had change in ownership)
+	use("nvim-tree/nvim-web-devicons") -- Dev Icons
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+	-- config needed
+	use("liuchengxu/vim-which-key")
+	--use "junegunn/fzf", { 'do': { -> fzf#install() } }
+	--use "junegunn/fzf.vim"
+	use("norcalli/nvim-colorizer.lua") --instant colors!
+	use("justinmk/vim-sneak") --go to nearest letter or word
+
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
 end)
