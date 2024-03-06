@@ -4,7 +4,7 @@ This set up requires the neovim nightly release
 
 This can be installed with the script included below:
 
-```
+```sh
 #!/bin/bash
 cd "/path/to/store/script"
 sudo rm -r neovim

@@ -34,11 +34,11 @@ keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<cr>
 
 -- Telescope Explorer
 keymap("n", "<leader>t", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader-g>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
 -- File Explorer extension
-keymap("n", "<leader>e", "<cmd>Telescope file_browser<cr> | <ESC>", opts)
+keymap("n", "<leader>e", "<cmd>Telescope file_browser<cr><esc>", opts)
 -- Telescope media file extension
-keymap("n", "<leader>m", "<cmd>Telescope media_files<cr> | <ESC>", opts)
+keymap("n", "<leader>m", "<cmd>Telescope media_files<cr><esc>", opts)
 
 -- Resize with jrrows
 keymap("n", "<A-Up>", ":resize +2<CR>", opts)
