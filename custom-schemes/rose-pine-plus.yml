@@ -1,7 +1,7 @@
 information:
   name: rose-pine-plus
   background: dark
-  author: "Al.exe  <alEXE-tech@protonmail.com>"
+  author: "Al.exe  <alex_burton.hhoql@simplelogin.com>"
 
 palette:
   fg: "#e0def4"
@@ -22,7 +22,7 @@ palette:
   cyan: "#9ccfd8"
   white: "#e7cde7"
   pink: "#e793ce"
-  comment_green: "#b8d8be"
+  lavender: "#4e4870"
   line_grey: "#5C6370"
   gutter_fg_grey: "#858585"
   cursor_grey: "#2C323C"
@@ -33,6 +33,8 @@ palette:
   warning_orange: "#ff8800"
   info_yellow: "#FFCC66"
   search_blue: "#5bbff2"
+  dry_green: "#b8d8be"
+  dry_pink: "#d8bcbc"
   git_green: "#81B88B"
   symlink: "#29B8D8"
   garden: "#69d1a7"
@@ -45,8 +47,7 @@ palette:
 
 highlights:
   Normal: "fg bg"
-
-  Comment: "cursor_grey"
+  Comment: "lavender"
   Constant: "garden"
   String: "pink"
   Character: "fg"
@@ -73,12 +74,11 @@ highlights:
   Structure: "yellow"
   Typedef: "yellow"
   Special: "lust - i"
-  SpecialComment: "line_grey"
+  SpecialComment: "dry_green"
   Error: "error_red - br"
   Todo: "purple - bi"
   Underlined: "cyan . u"
   Cursor: "cursor_fg cursor_bg"
-
   ColorColumn: "- cursor_grey"
   CursorLineNr: "white - b"
   SignColumn: "- bg"
@@ -122,11 +122,10 @@ highlights:
   WarningMsg: "yellow"
   WildMenu: "bg lust"
   EndOfBuffer: "bg"
-  
 
   # -- Start Treesitter --
   # Misc
-  TSComment: "line_grey"
+  TSComment: "lavender"
   TSError: "error_red"
   TSPunctDelimiter: "lust"
   TSPunctBracket: "chocolate"
