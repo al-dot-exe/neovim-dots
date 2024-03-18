@@ -12,23 +12,21 @@ vim.g.rose_pine_disable_italics = false
 vim.g.rose_pine_disable_background = false
 --
 -- -- Set colorscheme after options
--- -- vim.cmd "colorscheme rose-pine-plus"
+-- vim.cmd "colorscheme rose-pine-plus"
 
--- function file_exists(name)
---
---   if f~=nil then io.close(f) return true else return false end
--- end
 
 -- change the colorscheme by distro
-local get_distro = io.popen("lsb_release -i")
-local distro = get_distro:read("*a")
-local colorscheme
+-- local get_distro = io.popen("lsb_release -i")
+-- local distro = get_distro:read("*a")
 
-if string.find(distro, "Arch") then
-  colorscheme = "rose-pine-plus"
-else
-  colorscheme = "qubes"
-end
+local colorscheme
+colorscheme = "rose-pine-plus"
+
+-- if string.find(distro, "Arch") then
+--   colorscheme = "rose-pine-plus"
+-- else
+--   colorscheme = "qubes"
+-- end
 
 -- Other color schemes
 -- nightfly'

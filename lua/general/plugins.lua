@@ -85,7 +85,7 @@ return packer.startup(function(use)
 
 	-- Debugger Protocol
 	use({
-		{ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } },
+		{ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 		"folke/neodev.nvim", -- enables typechecking for dap-ui debugger
 	})
 
@@ -136,7 +136,6 @@ return packer.startup(function(use)
 
 	--Theming
 	use({
-		"rose-pine/neovim",
 		"christianchiarulli/nvcode-color-schemes.vim",
 		"bluz71/vim-nightfly-guicolors",
 		"nvim-tree/nvim-web-devicons", -- Dev Icons (has changed ownerhip,
