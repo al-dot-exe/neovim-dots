@@ -85,7 +85,7 @@ return packer.startup(function(use)
 
 	-- Debugger Protocol
 	use({
-		{ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } },
+		{ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 		"folke/neodev.nvim", -- enables typechecking for dap-ui debugger
 	})
 
