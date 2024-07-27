@@ -67,13 +67,14 @@ return packer.startup(function(use)
 	})
 
 	-- Parsers!
-	use({
-		{ "nvim-treesitter/nvim-treesitter", run = "TSUpdate" }, -- sexy syntax highlighting
-		"tree-sitter/tree-sitter-embedded-template", -- highlighting for ejs and erb hopefully
-		"nvim-treesitter/playground", -- element view for treesitter
-		"p00f/nvim-ts-rainbow", -- extra highlighting for scope differentiation
-		"dense-analysis/ale", -- async Linting Engine
-	})
+  --
+	-- use({
+	-- 	{ "nvim-treesitter/nvim-treesitter", run = "TSUpdate" }, -- sexy syntax highlighting
+	-- 	"tree-sitter/tree-sitter-embedded-template", -- highlighting for ejs and erb hopefully
+	-- 	"nvim-treesitter/playground", -- element view for treesitter
+	-- 	"p00f/nvim-ts-rainbow", -- extra highlighting for scope differentiation
+	-- 	"dense-analysis/ale", -- async Linting Engine
+	-- })
 
 	-- Language Server Provider (LSP)
 	use({

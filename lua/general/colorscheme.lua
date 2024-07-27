@@ -1,5 +1,6 @@
 require("colorizer").setup()
-
+local theme = require("../../theme")
+  
 -- Set variant
 -- Defaults to 'dawn' if vim background is light
 -- @usage 'base' | 'moon' | 'dawn' | 'rose-pine[-moon][-dawn]'
@@ -12,37 +13,8 @@ vim.g.rose_pine_disable_italics = false
 vim.g.rose_pine_disable_background = false
 --
 -- -- Set colorscheme after options
--- vim.cmd "colorscheme rose-pine-plus"
+local colorscheme = theme
 
-
--- change the colorscheme by distro
--- local get_distro = io.popen("lsb_release -i")
--- local distro = get_distro:read("*a")
-
-local colorscheme
-colorscheme = "rose-pine-plus"
-
--- if string.find(distro, "Arch") then
---   colorscheme = "rose-pine-plus"
--- else
---   colorscheme = "qubes"
--- end
-
--- Other color schemes
--- nightfly'
--- rose-pine'
--- nord'
--- dracula'
--- gruvbox'
--- metanoia'
--- nvcode'
--- palenight'
--- snazzy'
--- xoria'
--- aurora'
--- CUSTOM COLORS
--- rose-pine-plus
--- qubes
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 
