@@ -136,7 +136,6 @@ return packer.startup(function(use)
 
 	--Theming
 	use({
-		"rose-pine/neovim",
 		"christianchiarulli/nvcode-color-schemes.vim",
 		"bluz71/vim-nightfly-guicolors",
 		"nvim-tree/nvim-web-devicons", -- Dev Icons (has changed ownerhip,

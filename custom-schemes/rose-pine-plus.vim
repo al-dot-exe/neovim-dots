@@ -8,7 +8,7 @@ endif
 let g:colors_name='rose-pine-plus'
 
 hi Normal guifg=#e0def4 ctermfg=189 guibg=#191724 ctermbg=234 gui=NONE cterm=NONE
-hi Comment guifg=#2c323c ctermfg=236 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Comment guifg=#b8d8be ctermfg=236 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Constant guifg=#69d1a7 ctermfg=79 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi String guifg=#e793ce ctermfg=176 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Character guifg=#e0def4 ctermfg=189 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE

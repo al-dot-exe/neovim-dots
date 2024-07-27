@@ -47,7 +47,12 @@ palette:
 
 highlights:
   Normal: "fg bg"
+<<<<<<< Updated upstream
   Comment: "lavender"
+=======
+
+  Comment: "comment_green"
+>>>>>>> Stashed changes
   Constant: "garden"
   String: "pink"
   Character: "fg"
@@ -74,7 +79,11 @@ highlights:
   Structure: "yellow"
   Typedef: "yellow"
   Special: "lust - i"
+<<<<<<< Updated upstream
   SpecialComment: "dry_green"
+=======
+  SpecialComment: "comment_green"
+>>>>>>> Stashed changes
   Error: "error_red - br"
   Todo: "purple - bi"
   Underlined: "cyan . u"
@@ -125,7 +134,11 @@ highlights:
 
   # -- Start Treesitter --
   # Misc
+<<<<<<< Updated upstream
   TSComment: "lavender"
+=======
+  TSComment: "comment_green"
+>>>>>>> Stashed changes
   TSError: "error_red"
   TSPunctDelimiter: "lust"
   TSPunctBracket: "chocolate"

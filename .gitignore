@@ -1,5 +1,6 @@
 # Ignore these files to differentiate between devices
 *.txt
+custom-schemes/
 plugin/packer_compiled.lua
 sys
 res
