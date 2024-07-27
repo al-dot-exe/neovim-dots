@@ -62,32 +62,36 @@ return packer.startup(function(use)
 	use({
 		"hrsh7th/vim-vsnip", -- snippet support for html and css?
 		"hrsh7th/vim-vsnip-integ",
-		"L3MON4D3/Luasnip", -- Lua snippet engine
+    -- Lua snippets engine plus extra snippets
+      { 
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" },
+  },
 		"rafamadriz/friendly-snippets", -- a bunch of snippets
 	})
 
 	-- Parsers!
   --
-	-- use({
-	-- 	{ "nvim-treesitter/nvim-treesitter", run = "TSUpdate" }, -- sexy syntax highlighting
-	-- 	"tree-sitter/tree-sitter-embedded-template", -- highlighting for ejs and erb hopefully
-	-- 	"nvim-treesitter/playground", -- element view for treesitter
-	-- 	"p00f/nvim-ts-rainbow", -- extra highlighting for scope differentiation
-	-- 	"dense-analysis/ale", -- async Linting Engine
-	-- })
+	use({
+		{ "nvim-treesitter/nvim-treesitter", run = "TSUpdate" }, -- sexy syntax highlighting
+		"tree-sitter/tree-sitter-embedded-template", -- highlighting for ejs and erb hopefully
+		"nvim-treesitter/playground", -- element view for treesitter
+		"HiPhish/rainbow-delimiters.nvim", -- extra highlighting for scope differentiation
+		"dense-analysis/ale", -- async Linting Engine
+	})
 
 	-- Language Server Provider (LSP)
 	use({
 		"neovim/nvim-lspconfig", -- built in language servers
 		"williamboman/mason.nvim", -- Portable package manager for lanaguage details (lsp, lint, daps,
 		"williamboman/mason-lspconfig.nvim", -- Bridge between mason and lsp config
-		"jose-elias-alvarez/null-ls.nvim", -- Provides lsp formatting and linting
+	-- DEPRECATED	"jose-elias-alvarez/null-ls.nvim", -- Provides lsp formatting and linting 
 	})
 
 	-- Debugger Protocol
 	use({
 		{ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
-		"folke/neodev.nvim", -- enables typechecking for dap-ui debugger
+		"folke/lazydev.nvim", -- faster LS setup in neovim
 	})
 
 	-- Auto Completion Plugins
@@ -98,7 +102,7 @@ return packer.startup(function(use)
 		"hrsh7th/cmp-cmdline", -- cmdline completion
 		"saadparwaiz1/cmp_luasnip", -- snippet completion for lua
 		"hrsh7th/cmp-nvim-lsp", -- Extra source completion
-		"windwp/nvim-autopairs", -- will auto complete lines testing for now ***
+		"windwp/nvim-autopairs", -- autopairing for neovim
 	})
 
 	-- File Navigation
@@ -112,7 +116,7 @@ return packer.startup(function(use)
 	-- Web Development
 	use({
 		"turbio/bracey.vim", --Opens frontend preview on local machine
-		"NTBBloodbath/rest.nvim", -- REST client to test server not working right :/ pretty sure its working actually
+    -- rest.nvim was deprecated. I'll need a new rest api tester
 		"aspeddro/pandoc.nvim", -- needed for previewer
 		"davidgranstrom/nvim-markdown-preview", -- markdown previewer
 	})
@@ -135,12 +139,11 @@ return packer.startup(function(use)
 		end,
 	})
 
-	--Theming
+	--Theming and Styling
 	use({
 		"christianchiarulli/nvcode-color-schemes.vim",
-		"bluz71/vim-nightfly-guicolors",
 		"nvim-tree/nvim-web-devicons", -- Dev Icons (has changed ownerhip,
-		"norcalli/nvim-colorizer.lua", --instant colors!
+		"norcalli/nvim-colorizer.lua", --instant highlighting for color codes
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim

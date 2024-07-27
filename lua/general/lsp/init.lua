@@ -8,10 +8,10 @@ end
 
 -- IMPORTANT: make sure to setup neodev BEFORE lspconfig to ensure nvim-dap-ui is used
 require("dapui").setup()
-require("neodev").setup({
+require("lazydev").setup({
   library = { plugins = { "nvim-dap-ui" }, types = true },
 })
 require("general.lsp.mason")
 require("general.lsp.handlers").setup()
-require("general.lsp.null-ls")
+-- require("general.lsp.null-ls") DEPRECATED, need a replacement for null ls
 
