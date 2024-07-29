@@ -85,13 +85,14 @@ return packer.startup(function(use)
 		"neovim/nvim-lspconfig", -- built in language servers
 		"williamboman/mason.nvim", -- Portable package manager for lanaguage details (lsp, lint, daps,
 		"williamboman/mason-lspconfig.nvim", -- Bridge between mason and lsp config
-	-- DEPRECATED	"jose-elias-alvarez/null-ls.nvim", -- Provides lsp formatting and linting 
+	"jose-elias-alvarez/null-ls.nvim", -- !!!ARCHIVED!!! Provides lsp formatting and linting 
 	})
 
 	-- Debugger Protocol
 	use({
 		{ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
-		"folke/lazydev.nvim", -- faster LS setup in neovim
+		-- "folke/lazydev.nvim", -- potential null-ls alterantive faster LS setup in neovim
+	"jose-elias-alvarez/null-ls.nvim", 
 	})
 
 	-- Auto Completion Plugins
@@ -121,6 +122,17 @@ return packer.startup(function(use)
 		"davidgranstrom/nvim-markdown-preview", -- markdown previewer
 	})
 
+  -- Code Testing (No file for this yet, research if this is needed)
+  use({
+  "andythigpen/nvim-coverage",
+  requires = "nvim-lua/plenary.nvim",
+  -- Optional: needed for PHP when using the cobertura parser
+  rocks = { 'lua-xmlreader' },
+  config = function()
+    require("coverage").setup()
+  end,
+})
+
 	-- Terminal Support
 	use({
 		"akinsho/toggleterm.nvim",
@@ -144,6 +156,7 @@ return packer.startup(function(use)
 		"christianchiarulli/nvcode-color-schemes.vim",
 		"nvim-tree/nvim-web-devicons", -- Dev Icons (has changed ownerhip,
 		"norcalli/nvim-colorizer.lua", --instant highlighting for color codes
+    "lukas-reineke/indent-blankline.nvim", -- indent
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim

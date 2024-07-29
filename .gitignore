@@ -1,7 +1,7 @@
 # Ignore these files to differentiate between devices
 *.txt
 custom-schemes/
-theme.lua
+lua/themes
 plugin/packer_compiled.lua
 sys
 res

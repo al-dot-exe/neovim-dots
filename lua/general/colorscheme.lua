@@ -1,5 +1,5 @@
 require("colorizer").setup()
-local theme = require("../../theme")
+local theme = require("themes.theme")
   
 -- Set variant
 -- Defaults to 'dawn' if vim background is light
