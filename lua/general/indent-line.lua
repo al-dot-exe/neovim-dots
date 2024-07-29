@@ -26,4 +26,4 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
     vim.api.nvim_set_hl(0, "Indent5", { fg = hl.Indent5})
 end)
 
-indent_line.setup { indent = { highlight = highlight } }
+indent_line.setup { indent = { char='¦', highlight = highlight } }

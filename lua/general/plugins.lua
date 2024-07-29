@@ -91,8 +91,7 @@ return packer.startup(function(use)
 	-- Debugger Protocol
 	use({
 		{ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
-		-- "folke/lazydev.nvim", -- potential null-ls alterantive faster LS setup in neovim
-	"jose-elias-alvarez/null-ls.nvim", 
+		"folke/lazydev.nvim", -- potential null-ls alterantive faster LS setup in neovim
 	})
 
 	-- Auto Completion Plugins
