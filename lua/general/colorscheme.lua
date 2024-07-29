@@ -13,7 +13,7 @@ vim.g.rose_pine_disable_italics = false
 vim.g.rose_pine_disable_background = false
 --
 -- -- Set colorscheme after options
-local colorscheme = theme
+local colorscheme = theme.main
 
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)

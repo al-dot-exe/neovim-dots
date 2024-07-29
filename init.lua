@@ -13,13 +13,10 @@ require("general.keymaps")
 require("general.telescope")
 require("general.toggleterm")
 require("general.luasnip")
--- require("general.rest") DEPRECTED
+-- require("general.rest") DEPRECATED
 require("general.templatelangs")
 require("general.pandoc")
--- require "general.dim" -- not playing nice with null ls
 
--- Extra vim scripts with no lua alternatives
-vim.cmd("source ~/.config/nvim/lua/vim-scripts/indentLine.vim")
 
 -- Color Scheme
 require("general.colorscheme")
