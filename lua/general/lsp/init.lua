@@ -6,6 +6,8 @@ if not status_ok then
 	return
 end
 
+
+
 -- IMPORTANT: make sure to setup neodev BEFORE lspconfig to ensure nvim-dap-ui is used
 require("dapui").setup()
 -- require("lazydev").setup({
@@ -14,4 +16,8 @@ require("dapui").setup()
 require("general.lsp.mason")
 require("general.lsp.handlers").setup()
 require("general.lsp.null-ls") -- DEPRECATED, need a replacement for null ls
+
+lspconfig.tsserver.setup{
+   root_dir = lspconfig.util.root_pattern('.git')(fname)
+}
 
