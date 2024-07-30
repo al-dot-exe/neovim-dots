@@ -85,7 +85,7 @@ return packer.startup(function(use)
 		"neovim/nvim-lspconfig", -- built in language servers
 		"williamboman/mason.nvim", -- Portable package manager for lanaguage details (lsp, lint, daps,
 		"williamboman/mason-lspconfig.nvim", -- Bridge between mason and lsp config
-	"jose-elias-alvarez/null-ls.nvim", -- !!!ARCHIVED!!! Provides lsp formatting and linting 
+	--"jose-elias-alvarez/null-ls.nvim", -- !!!ARCHIVED!!! Provides lsp formatting and linting 
 	})
 
 	-- Debugger Protocol
