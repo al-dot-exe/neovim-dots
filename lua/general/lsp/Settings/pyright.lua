@@ -1,10 +1,10 @@
-local pyright_opts = {
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "off"
-      }
-    }
-  },
+local pyright_configs = {
+	python = {
+		analysis = {
+			autoSearchPaths = true,
+			typeCheckingMode = "on",
+		},
+	},
 }
-return pyright_opts
+
+return pyright_configs

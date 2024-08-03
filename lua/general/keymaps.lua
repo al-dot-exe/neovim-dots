@@ -11,32 +11,27 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Better window navigation
--- keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
 keymap("n", "<S-h>", ":tabp <cr>", opts)
 keymap("n", "<S-l>", ":tabn <cr>", opts)
-
--- Navigate buffers
--- temporarily replacing buffer navigation for tab navigation for better funcitonality
--- keymap("n", "<S-l>", ":bnext<CR>", opts)
--- keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
 
 --Opens Mason package manager
 keymap("n", "<c-i>", "<cmd>Mason<cr>", opts)
 
 -- Formatting and Linting
--- formatting_sync is deprecated changing to format(edit: think it broke everything else)
-keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<cr>", opts)
+-- format is deprecated in favor of the conform plugin https://github.com/stevearc/conform.nvim
+-- keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require('conform').format()<cr>", opts)
+keymap("n", "<leader>s", "<cmd>ALEFixSuggest<cr>", opts)
+keymap("n", "<leader>a", "<cmd>ALEDetail<cr>", opts)
 
 -- Telescope Explorer
 keymap("n", "<leader>t", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
+
 -- File Explorer extension
 keymap("n", "<leader>e", "<cmd>Telescope file_browser<cr><esc>", opts)
+
 -- Telescope media file extension
 keymap("n", "<leader>m", "<cmd>Telescope media_files<cr><esc>", opts)
 

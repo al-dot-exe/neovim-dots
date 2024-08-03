@@ -7,17 +7,17 @@ require("general.treesitter")
 require("general.lsp")
 require("general.cmp")
 require("general.autopairs")
-require("general.indent-line")
 require("general.options")
 require("general.keymaps")
 require("general.telescope")
-require("general.toggleterm")
+require("general.trouble")
 require("general.luasnip")
--- require("general.rest") DEPRECATED
+require("general.rest")
 require("general.templatelangs")
 require("general.pandoc")
 
-
--- Color Scheme
+-- Theming
 require("general.colorscheme")
 require("general.icons")
+require("general.lualine")
+require("general.indent-line")
