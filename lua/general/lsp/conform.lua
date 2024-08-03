@@ -44,6 +44,7 @@ conform.setup({
 		javascript = { "prettier", "prettierd", stop_after_first = true },
 		typescript = { "prettier", "prettierd", stop_after_first = true },
 		json = { "prettier", "prettierd", stop_after_first = true },
+		yaml = { "yamlfmt", "prettier", "prettierd", stop_after_first = true },
 		markdown = { "markdownlint" },
 	},
 })

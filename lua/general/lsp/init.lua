@@ -65,7 +65,7 @@ lspconfig["cssls"].setup({
 
 -- Typescript/Javascript
 lspconfig.tsserver.setup({
-	root_dir = lspconfig.util.root_pattern(".git")(fname),
+	root_dir = lspconfig.util.root_pattern(".git")(),
 })
 
 -- Markdown
@@ -78,6 +78,11 @@ if not jsonls_configs_ok then
 	return
 end
 lspconfig["jsonls"].setup(jsonls_configs.settings)
+
+-- YAML
+lspconfig["yamlls"].setup({
+	filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.onedev-buildspec" },
+})
 
 -- Docker/Docker compose
 lspconfig.dockerls.setup({})
