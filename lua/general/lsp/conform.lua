@@ -47,4 +47,9 @@ conform.setup({
 		yaml = { "yamlfmt", "prettier", "prettierd", stop_after_first = true },
 		markdown = { "markdownlint" },
 	},
+	formatters = {
+		black = {
+			prepend_args = { "--line-length", "78" },
+		},
+	},
 })
